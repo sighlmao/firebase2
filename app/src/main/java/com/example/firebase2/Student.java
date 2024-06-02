@@ -15,5 +15,13 @@ public class Student {
         this.email = email;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getId() {
+        return id;
+    }
+
     // Getters and setters...
 }
