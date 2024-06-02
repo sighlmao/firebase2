@@ -13,9 +13,10 @@ public class FirebaseDatabaseHelper {
     }
 
     public void addStudent(Student student) {
-        String id = mReferenceStudents.push().getKey();
-        student.setId(id);
-        mReferenceStudents.child(id).setValue(student);
+        if (student.getId() == null) {
+            student.setId(mReferenceStudents.push().getKey());
+        }
+        mReferenceStudents.child(student.getId()).setValue(student);
     }
 
     public void updateStudent(String id, Student student) {
